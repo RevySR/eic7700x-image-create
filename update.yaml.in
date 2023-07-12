@@ -1,0 +1,5 @@
+---
+- name: add-apt-repository
+  repo: ppa:sifive-sandbox/linux
+- name: replace-kernel
+  flavor: eswin
