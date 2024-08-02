@@ -1,3 +1,4 @@
 *.img
+env.sh
 ppa.sources
 update.yaml
