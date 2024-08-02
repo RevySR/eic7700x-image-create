@@ -1,5 +1,11 @@
 ---
 - name: add-apt-repository
   repo: ppa:sifive-sandbox/linux
+- name: cp
+  source: {{PWD}}/flash-kernel.machine
+  dest: $LAYERS[0]/etc/apt/flash-kernel/machine
+- name: cp
+  source: {{PWD}}/flash-kernel.db
+  dest: $LAYERS[0]/etc/apt/flash-kernel/db
 - name: replace-kernel
   flavor: eswin

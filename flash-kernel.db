@@ -1,0 +1,6 @@
+Machine: SiFive HiFive Premier P550
+Kernel-Flavors: any
+DTB-Id: eswin/hifive-premier-p550.dtb
+Boot-Script-Path: /boot/boot.scr
+U-Boot-Script-Name: bootscr.uboot-generic
+Required-Packages: u-boot-tools
