@@ -7,5 +7,11 @@
 - name: cp
   source: {{PWD}}/flash-kernel.db
   dest: $LAYERS[0]/etc/apt/flash-kernel/db
+- name: cp
+  source: {{PWD}}/grub/10_cmdline.cfg
+  dest: $LAYERS[0]/etc/default/grub.d/10_cmdline.cfg
+- name: cp
+  source: {{PWD}}/grub/90_watchdog-thresh.cfg
+  dest: $LAYERS[0]/etc/default/grub.d/90_watchdog-thresh.cfg
 - name: replace-kernel
   flavor: eswin
