@@ -37,7 +37,6 @@ new: noble-live-server-riscv64.img
 	. ./env.sh; sudo mount $$part_to mnt_to
 	. ./env.sh; sudo mount $$part_from mnt_installer
 	sudo rm -rf mnt_to/dtb/
-	sudo mkdir -p mnt_to/FIRMWARE/ventana/synth-vx
 	sudo mount mnt_installer/casper/ubuntu-server-minimal.ubuntu-server.installer.generic.squashfs mnt_from
 	sudo mkdir -p mnt_to/dtb/
 	sudo cp -r mnt_from/usr/lib/firmware/*-eswin/device-tree/* mnt_to/dtb/

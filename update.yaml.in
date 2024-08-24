@@ -1,9 +1,6 @@
 ---
 - name: add-apt-repository
   repo: ppa:sifive-sandbox/linux
-- name: install-packages
-  packages:
-  - linux-firmware
 - name: cp
   source: {{PWD}}/flash-kernel.machine
   dest: $LAYERS[0]/etc/flash-kernel/machine
