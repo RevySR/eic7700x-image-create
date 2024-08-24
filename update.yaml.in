@@ -1,12 +1,15 @@
 ---
 - name: add-apt-repository
   repo: ppa:sifive-sandbox/linux
+- name: install-packages
+  packages:
+  - linux-firmware
 - name: cp
   source: {{PWD}}/flash-kernel.machine
-  dest: $LAYERS[0]/etc/apt/flash-kernel/machine
+  dest: $LAYERS[0]/etc/flash-kernel/machine
 - name: cp
   source: {{PWD}}/flash-kernel.db
-  dest: $LAYERS[0]/etc/apt/flash-kernel/db
+  dest: $LAYERS[0]/etc/flash-kernel/db
 - name: cp
   source: {{PWD}}/grub/10_cmdline.cfg
   dest: $LAYERS[0]/etc/default/grub.d/10_cmdline.cfg
