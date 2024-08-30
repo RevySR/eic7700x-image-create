@@ -13,9 +13,9 @@ all:
 	make new
 
 noble-live-server-riscv64.img:
-	wget https://cdimage.ubuntu.com/releases/noble/release/ubuntu-24.04-live-server-riscv64.img.gz
-	pigz -d ubuntu-24.04-live-server-riscv64.img.gz
-	mv ubuntu-24.04-live-server-riscv64.img noble-live-server-riscv64.img
+	wget https://cdimage.ubuntu.com/releases/noble/release/ubuntu-24.04.1-live-server-riscv64.img.gz
+	pigz -d ubuntu-24.04.1-live-server-riscv64.img.gz
+	mv ubuntu-24.04.1-live-server-riscv64.img noble-live-server-riscv64.img
 	# get https://cdimage.ubuntu.com/ubuntu-server/noble/daily-live/current/noble-live-server-riscv64.img.gz || \
 	# wget https://cdimage.ubuntu.com/ubuntu-server/noble/daily-live/pending/noble-live-server-riscv64.img.gz
 	# pigz -d noble-live-server-riscv64.img.gz
