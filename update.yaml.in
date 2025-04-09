@@ -1,6 +1,6 @@
 ---
 - name: add-apt-repository
-  repo: ppa:sifive-sandbox/linux
+  repo: ppa:revysr/noble-eic770x
 - name: cp
   source: {{PWD}}/flash-kernel/machine
   dest: $LAYERS[0]/etc/flash-kernel/machine
@@ -14,4 +14,4 @@
   source: {{PWD}}/grub/90_watchdog-thresh.cfg
   dest: $LAYERS[0]/etc/default/grub.d/90_watchdog-thresh.cfg
 - name: replace-kernel
-  flavor: eswin
+  flavor: eic7700x
