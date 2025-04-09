@@ -1,0 +1,54 @@
+name: eic7700-image
+
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - '*'
+  pull_request:
+  workflow_dispatch:
+
+env:
+  ARCH: riscv
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Update Apt Cache
+        run: sudo apt update
+
+      - name: Install Software
+        run: |
+              sudo apt install -y git snapd qemu-user-static ubuntu-dev-tools zstd
+              sudo apt install -y udev xorriso squashfs-tools python3-debian gpg liblz4-tool fuse3
+              sudo systemctl restart systemd-binfmt
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Checkout livefs-editor
+        uses: actions/checkout@v4
+        with:
+          repository: 'mwhudson/livefs-editor'
+          path: 'livefs-editor'
+
+      - name: Install livefs-editor
+        run: |
+              pushd livefs-editor
+                sudo python3 -m pip install --break-system-packages .
+              popd
+
+      - name: Build
+        run: |
+              make new
+              zstd new.img
+
+      - name: Upload Image
+        uses: actions/upload-artifact@v4
+        with:
+          name: eic7700x-image
+          path: ./*.zst
+          retention-days: 30
